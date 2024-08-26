@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLİNE DİYET BİLGİ FORMU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ONLİNE DİYET BİLGİ FORMU</h1>
+        <p><strong>Hazırlayan:</strong> Dyt. Betül Kendirli Aldemir <strong>Unvan:</strong> Beslenme ve Diyet Uzmanı</p>
+        <p>Değerli Danışanım, Bu form, size özel beslenme planı hazırlamamda yardımcı olacak önemli bilgileri toplamak için tasarlanmıştır. Lütfen tüm soruları dikkatle okuyup eksiksiz yanıtlayınız.</p>
+        
+        <form id="dietForm" action="https://formspree.io/f/SIZIN_FORMSPREE_KODUNUZ" method="POST">
+            <div class="form-group">
+                <label for="date">Tarih:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <h2>1. KİŞİSEL BİLGİLER</h2>
+            <div class="form-group">
+                <label for="fullName">Ad Soyad:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Yaş:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Meslek:</label>
+                <input type="text" id="occupation" name="occupation">
+            </div>
+            <div class="form-group">
+                <label for="childCount">Çocuk Sayısı:</label>
+                <input type="number" id="childCount" name="childCount">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Doğum Tarihi ve Yeri:</label>
+                <input type="text" id="birthDate" name="birthDate">
+            </div>
+            <div class="form-group">
+                <label for="gender">Cinsiyet:</label>
+                <select id="gender" name="gender">
+                    <option value="Kadın">Kadın</option>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="maritalStatus">Medeni Durum:</label>
+                <select id="maritalStatus" name="maritalStatus">
+                    <option value="Bekar">Bekar</option>
+                    <option value="Evli">Evli</option>
+                    <option value="Boşanmış">Boşanmış</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">Şehir:</label>
+                <input type="text" id="city" name="city">
+            </div>
+
+            <h2>2. FİZİKSEL ÖZELLİKLER VE SAĞLIK BİLGİLERİ</h2>
+            <div class="form-group">
+                <label for="height">Boy (cm):</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Ağırlık (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="waist">Bel Çevresi (cm):</label>
+                <input type="number" id="waist" name="waist">
+            </div>
+            <div class="form-group">
+                <label for="hip">Kalça Çevresi (cm):</label>
+                <input type="number" id="hip" name="hip">
+            </div>
+            <div class="form-group">
+                <label>Vücut Tipi:</label>
+                <input type="radio" id="bodyTypeApple" name="bodyType" value="Elma">
+                <label for="bodyTypeApple">Elma</label>
+                <input type="radio" id="bodyTypePear" name="bodyType" value="Armut">
+                <label for="bodyTypePear">Armut</label>
+                <input type="radio" id="bodyTypeAll" name="bodyType" value="Tüm Vücut">
+                <label for="bodyTypeAll">Tüm Vücut</label>
+            </div>
+
+            <h3>Sağlık Bilgileri</h3>
+            <div class="form-group">
+                <label>Kronik Hastalıklar (varsa işaretleyiniz):</label><br>
+                <input type="checkbox" id="heartDisease" name="chronicDiseases" value="Kalp-damar hastalığı">
+                <label for="heartDisease">Kalp-damar hastalığı</label><br>
+                <input type="checkbox" id="hypertension" name="chronicDiseases" value="Hipertansiyon">
+                <label for="hypertension">Hipertansiyon</label><br>
+                <input type="checkbox" id="diabetes" name="chronicDiseases" value="Diyabet">
+                <label for="diabetes">Diyabet</label><br>
+                <input type="checkbox" id="hypothyroid" name="chronicDiseases" value="Hipotiroid">
+                <label for="hypothyroid">Hipotiroid</label><br>
+                <input type="checkbox" id="hyperthyroid" name="chronicDiseases" value="Hipertiroid">
+                <label for="hyperthyroid">Hipertiroid</label><br>
+                <input type="checkbox" id="stomachProblems" name="chronicDiseases" value="Mide problemleri">
+                <label for="stomachProblems">Mide problemleri</label><br>
+                <input type="checkbox" id="kidneyDisease" name="chronicDiseases" value="Böbrek hastalığı">
+                <label for="kidneyDisease">Böbrek hastalığı</label><br>
+                <input type="checkbox" id="hormonalIssues" name="chronicDiseases" value="Hormonal sorunlar">
+                <label for="hormonalIssues">Hormonal sorunlar</label><br>
+                <input type="checkbox" id="celiac" name="chronicDiseases" value="Çölyak">
+                <label for="celiac">Çölyak</label><br>
+                <input type="checkbox" id="lactoseIntolerance" name="chronicDiseases" value="Laktoz intoleransı">
+                <label for="lactoseIntolerance">Laktoz intoleransı</label><br>
+                <input type="checkbox" id="constipation" name="chronicDiseases" value="Kabızlık">
+                <label for="constipation">Kabızlık</label><br>
+                <input type="checkbox" id="diarrhea" name="chronicDiseases" value="İshal">
+                <label for="diarrhea">İshal</label><br>
+                <input type="checkbox" id="ibs" name="chronicDiseases" value="İBS">
+                <label for="ibs">İBS</label><br>
+                <input type="checkbox" id="otherDisease" name="chronicDiseases" value="Diğer">
+                <label for="otherDisease">Diğer</label>
+                <input type="text" id="otherDiseaseText" name="otherDiseaseText" placeholder="Belirtiniz">
+            </div>
+            <div class="form-group">
+                <label for="operations">Geçirilen operasyonlar:</label>
+                <textarea id="operations" name="operations"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medications">Kullanılan ilaçlar/vitamin/mineraller:</label>
+                <textarea id="medications" name="medications"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Aile geçmişinde obezite:</label>
+                <input type="radio" id="familyObesityYes" name="familyObesity" value="Var">
+                <label for="familyObesityYes">Var</label>
+                <input type="radio" id="familyObesityNo" name="familyObesity" value="Yok">
+                <label for="familyObesityNo">Yok</label>
+                <input type="text" id="familyObesityRelation" name="familyObesityRelation" placeholder="Yakınlık:">
+            </div>
+            <div class="form-group">
+                <label>Son 6 ayda yapılan kan tahlilleri var mı?</label>
+                <input type="radio" id="bloodTestYes" name="bloodTest" value="Evet">
+                <label for="bloodTestYes">Evet</label>
+                <input type="radio" id="bloodTestNo" name="bloodTest" value="Hayır">
+                <label for="bloodTestNo">Hayır</label>
+            </div>
+            <div class="form-group">
+                <label>Menstrüasyon düzeni:</label>
+                <input type="radio" id="menstruationRegular" name="menstruation" value="Düzenli">
+                <label for="menstruationRegular">Düzenli</label>
+                <input type="radio" id="menstruationIrregular" name="menstruation" value="Düzensiz">
+                <label for="menstruationIrregular">Düzensiz</label>
+                <input type="radio" id="menstruationMenopause" name="menstruation" value="Menopoz">
+                <label for="menstruationMenopause">Menopoz</label>
+            </div>
+            <div class="form-group">
+                <label>Hormon tedavisi geçmişi:</label>
+                <input type="radio" id="hormoneTherapyYes" name="hormoneTherapy" value="Evet">
+                <label for="hormoneTherapyYes">Evet</label>
+                <input type="radio" id="hormoneTherapyNo" name="hormoneTherapy" value="Hayır">
+                <label for="hormoneTherapyNo">Hayır</label>
+                <input type="text" id="hormoneTherapyExplanation" name="hormoneTherapyExplanation" placeholder="Açıklama:">
+            </div>
+
+            <h2>3. KİLO GEÇMİŞİ VE HEDEFLER</h2>
+            <div class="form-group">
+                <label for="highestWeight">Bugüne kadar en yüksek kilonuz ve nedeni:</label>
+                <input type="text" id="highestWeight" name="highestWeight">
+            </div>
+            <div class="form-group">
+                <label for="lowestWeight">Bugüne kadar en düşük kilonuz ve nedeni:</label>
+                <input type="text" id="lowestWeight" name="lowestWeight">
+            </div>
+            <div class="form-group">
+                <label for="weightProblemStart">Kilo ne zaman sorun olmaya başladı? Yaşınız ve tetikleyen olay:</label>
+                <input type="text" id="weightProblemStart" name="weightProblemStart">
+            </div>
+            <div class="form-group">
+                <label for="weightGoal">Kilo verme hedefiniz (kg):</label>
+                <input type="number" id="weightGoal" name="weightGoal">
+            </div>
+            <div class="form-group">
+                <label for="goalDuration">Bu hedefe ulaşmak için düşündüğünüz süre (ay):</label>
+                <input type="number" id="goalDuration" name="goalDuration">
+            </div>
+            <div class="form-group">
+                <label>Kilo verme motivasyonunuz:</label><br>
+                <input type="checkbox" id="motivationHealth" name="weightLossMotivation" value="Sağlık">
+                <label for="motivationHealth">Sağlık</label>
+                <input type="checkbox" id="motivationAppearance" name="weightLossMotivation" value="Görünüş">
+                <label for="motivationAppearance">Görünüş</label>
+                <input type="checkbox" id="motivationEnergy" name="weightLossMotivation" value="Enerji seviyesi">
+                <label for="motivationEnergy">Enerji seviyesi</label>
+                <input type<input type="checkbox" id="motivationConfidence" name="weightLossMotivation" value="Özgüven">
+                <label for="motivationConfidence">Özgüven</label>
+                <input type="checkbox" id="motivationOther" name="weightLossMotivation" value="Diğer">
+                <label for="motivationOther">Diğer</label>
+                <input type="text" id="motivationOtherText" name="motivationOtherText" placeholder="Belirtiniz">
+            </div>
+            <div class="form-group">
+                <label for="weightMeaning">KİLO kelimesi sizin için ne anlam ifade ediyor?</label>
+                <textarea id="weightMeaning" name="weightMeaning"></textarea>
+            </div>
+
+            <h2>4. GEÇMİŞ DİYET DENEYİMLERİ</h2>
+            <div class="form-group">
+                <label>Bugüne kadar zayıflamak için denediğiniz yöntemler ve kaç kere:</label>
+                <textarea id="pastDietExperiences" name="pastDietExperiences" rows="5" placeholder="Örnek: Aralıklı oruç (2 kere), Düşük karbonhidrat diyeti (1 kere)"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Daha önce bir diyetisyenle çalıştınız mı?</label>
+                <input type="radio" id="dietitianYes" name="workedWithDietitian" value="Evet">
+                <label for="dietitianYes">Evet</label>
+                <input type="radio" id="dietitianNo" name="workedWithDietitian" value="Hayır">
+                <label for="dietitianNo">Hayır</label>
+            </div>
+            <div class="form-group">
+                <label for="dietitianExperience">Eğer evet ise, deneyiminiz:</label>
+                <textarea id="dietitianExperience" name="dietitianExperience"></textarea>
+            </div>
+
+            <h2>5. BESLENME ALIŞKANLIKLARI</h2>
+            <h3>Öğün Yerleri</h3>
+            <div class="form-group">
+                <input type="checkbox" id="mealPlaceHome" name="mealPlaces" value="Evde">
+                <label for="mealPlaceHome">Evde</label>
+                <input type="checkbox" id="mealPlaceOut" name="mealPlaces" value="Dışarıda">
+                <label for="mealPlaceOut">Dışarıda</label>
+                <input type="text" id="mealPlaceOutText" name="mealPlaceOutText" placeholder="Hangi öğünler:">
+            </div>
+            <div class="form-group">
+                <label>İş yerine yemek götürme imkanı:</label>
+                <input type="radio" id="bringLunchYes" name="bringLunchToWork" value="Var">
+                <label for="bringLunchYes">Var</label>
+                <input type="radio" id="bringLunchNo" name="bringLunchToWork" value="Yok">
+                <label for="bringLunchNo">Yok</label>
+            </div>
+
+            <h3>Hafta İçi Öğün Saatleri ve Tercihleri</h3>
+            <div class="form-group">
+                <label for="weekdayBreakfast">Kahvaltı:</label>
+                <input type="time" id="weekdayBreakfastTime" name="weekdayBreakfastTime">
+                <input type="text" id="weekdayBreakfastFood" name="weekdayBreakfastFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+            <div class="form-group">
+                <label for="weekdayLunch">Öğle:</label>
+                <input type="time" id="weekdayLunchTime" name="weekdayLunchTime">
+                <input type="text" id="weekdayLunchFood" name="weekdayLunchFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+            <div class="form-group">
+                <label for="weekdayDinner">Akşam:</label>
+                <input type="time" id="weekdayDinnerTime" name="weekdayDinnerTime">
+                <input type="text" id="weekdayDinnerFood" name="weekdayDinnerFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+
+            <h3>Hafta Sonu Öğün Saatleri ve Tercihleri</h3>
+            <div class="form-group">
+                <label for="weekendBreakfast">Kahvaltı:</label>
+                <input type="time" id="weekendBreakfastTime" name="weekendBreakfastTime">
+                <input type="text" id="weekendBreakfastFood" name="weekendBreakfastFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+            <div class="form-group">
+                <label for="weekendLunch">Öğle:</label>
+                <input type="time" id="weekendLunchTime" name="weekendLunchTime">
+                <input type="text" id="weekendLunchFood" name="weekendLunchFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+            <div class="form-group">
+                <label for="weekendDinner">Akşam:</label>
+                <input type="time" id="weekendDinnerTime" name="weekendDinnerTime">
+                <input type="text" id="weekendDinnerFood" name="weekendDinnerFood" placeholder="Tercih Edilen Yemekler">
+            </div>
+
+            <div class="form-group">
+                <label for="mainMealsCount">Günlük ana öğün sayısı:</label>
+                <input type="number" id="mainMealsCount" name="mainMealsCount">
+            </div>
+            <div class="form-group">
+                <label for="snacks">Ara öğünler ve içerikleri:</label>
+                <textarea id="snacks" name="snacks"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="breadConsumption">Günlük ekmek tüketimi:</label>
+                <input type="text" id="breadConsumption" name="breadConsumption">
+            </div>
+            <div class="form-group">
+                <label for="waterConsumption">Su tüketimi (günlük ortalama):</label>
+                <input type="number" id="waterConsumptionGlasses" name="waterConsumptionGlasses" placeholder="Bardak">
+                <input type="number" id="waterConsumptionLiters" name="waterConsumptionLiters" placeholder="Litre">
+            </div>
+            <div class="form-group">
+                <label>Alkol tüketimi:</label>
+                <select id="alcoholConsumption" name="alcoholConsumption">
+                    <option value="Hiç">Hiç</option>
+                    <option value="Nadiren">Nadiren</option>
+                    <option value="Haftada 1-2 kez">Haftada 1-2 kez</option>
+                    <option value="Haftada 3 veya daha fazla">Haftada 3 veya daha fazla</option>
+                </select>
+                <input type="text" id="alcoholType" name="alcoholType" placeholder="Miktar ve tür:">
+            </div>
+            <div class="form-group">
+                <label>Kafein tüketimi (kahve, çay, enerji içeceği vb.):</label>
+                <input type="text" id="caffeinType" name="caffeinType" placeholder="Tür:">
+                <input type="number" id="caffeinAmount" name="caffeinAmount" placeholder="Miktar (bardak/gün):">
+            </div>
+
+            <h3>Besin Tercihleri ve Alerjiler</h3>
+            <div class="form-group">
+                <label for="favoriteFruits">Sevilen meyveler:</label>
+                <input type="text" id="favoriteFruits" name="favoriteFruits">
+            </div>
+            <div class="form-group">
+                <label for="dislikedFruits">Sevilmeyen meyveler:</label>
+                <input type="text" id="dislikedFruits" name="dislikedFruits">
+            </div>
+            <div class="form-group">
+                <label for="favoriteVegetables">Sevilen sebzeler:</label>
+                <input type="text" id="favoriteVegetables" name="favoriteVegetables">
+            </div>
+            <div class="form-group">
+                <label for="dislikedVegetables">Sevilmeyen sebzeler:</label>
+                <input type="text" id="dislikedVegetables" name="dislikedVegetables">
+            </div>
+            <div class="form-group">
+                <label for="avoidedFoods">Tüketilmeyen et/süt ürünleri:</label>
+                <input type="text" id="avoidedFoods" name="avoidedFoods">
+            </div>
+            <div class="form-group">
+                <label for="favoriteFoods">En sevilen yiyecekler:</label>
+                <input type="text" id="favoriteFoods" name="favoriteFoods">
+            </div>
+            <div class="form-group">
+                <label for="dislikedFoods">En sevilmeyen yiyecekler:</label>
+                <input type="text" id="dislikedFoods" name="dislikedFoods">
+            </div>
+            <div class="form-group">
+                <label for="allergicFoods">Alerjik reaksiyon veren yiyecekler:</label>
+                <input type="text" id="allergicFoods" name="allergicFoods">
+            </div>
+            <div class="form-group">
+                <label for="indispensableFoods">Vazgeçilmez yiyecekler:</label>
+                <input type="text" id="indispensableFoods" name="indispensableFoods">
+            </div>
+            <div class="form-group">
+                <label for="neverEatenFoods">Asla yenilmeyecek yiyecekler:</label>
+                <input type="text" id="neverEatenFoods" name="neverEatenFoods">
+            </div>
+
+            <h3>Alerjen Besinler</h3>
+            <div class="form-group">
+                <label>Lütfen bildiğiniz tüm besin alerjilerinizi ve intoleranslarınızı belirtiniz:</label><br>
+                <input type="checkbox" id="allergyMilk" name="foodAllergies" value="Süt ve süt ürünleri">
+                <label for="allergyMilk">Süt ve süt ürünleri</label><br>
+                <input type="checkbox" id="allergyEgg" name="foodAllergies" value="Yumurta">
+                <label for="allergyEgg">Yumurta</label><br>
+                <input type="checkbox" id="allergyPeanut" name="foodAllergies" value="Fıstık">
+                <label for="allergyPeanut">Fıstık</label><br>
+                <input type="checkbox" id="allergyNuts" name="foodAllergies" value="Ağaç yemişleri">
+                <label for="allergyNuts">Ağaç yemişleri (ceviz, badem, fındık vb.)</label><br>
+                <input type="checkbox" id="allergyFish" name="foodAllergies" value="Balık">
+                <label for="allergyFish">Balık</label><br>
+                <input type="checkbox" id="allergyShellfish" name="foodAllergies" value="Kabuklu deniz ürünleri">
+                <label for="allergyShellfish">Kabuklu deniz ürünleri</label><br>
+                <input type="checkbox" id="allergySoy" name="foodAllergies" value="Soya">
+                <label for="allergySoy">Soya</label><br>
+                <input type="checkbox" id="allergyWheat" name="foodAllergies" value="Buğday / Gluten">
+                <label for="allergyWheat">Buğday / Gluten</label><br>
+                <input type="checkbox" id="allergySesame" name="foodAllergies" value="Susam">
+                <label for="allergySesame">Susam</label><br>
+                <input type="checkbox" id="allergyCelery" name="foodAllergies" value="Kereviz">
+                <label for="allergyCelery">Kereviz</label><br>
+                <input type="checkbox" id="allergyMustard" name="foodAllergies" value="Hardal">
+                <label for="allergyMustard">Hardal</label><br>
+                <input type="checkbox" id="allergySulfites" name="foodAllergies" value="Kükürt dioksit ve sülfitler">
+                <label for="allergySulfites">Kükürt dioksit ve sülfitler</label><br>
+                <input type="checkbox" id="allergyOther" name="foodAllergies" value="Diğer">
+                <label for="allergyOther">Diğer</label>
+                <input type="text" id="allergyOtherText" name="allergyOtherText" placeholder="Belirtiniz">
+            </div>
+            <div class="form-group">
+                <label for="allergySeverity">Alerji şiddeti (hafif, orta, şiddetli) ve belirtiler:</label>
+                <textarea id="allergySeverity" name="allergySeverity"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="foodIntolerances">Besin intoleransları (varsa):</label>
+                <textarea id="foodIntolerances" name="foodIntolerances"></textarea>
+            </div>
+
+            <h2>6. BESLENME GÜNLÜĞÜ</h2>
+            <p>Lütfen tipik bir gününüzde tükettiğiniz besinleri ve miktarlarını detaylı olarak yazınız.</p>
+            <div class="form-group">
+                <label for="breakfastDiary">Sabah:</label>
+                <textarea id="breakfastDiary" name="breakfastDiary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="morningSnackDiary">Kuşluk:</label>
+                <textarea id="morningSnackDiary" name="morningSnackDiary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lunchDiary">Öğle:</label>
+                <textarea id="lunchDiary" name="lunchDiary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="afternoonSnackDiary">İkindi:</label>
+                <textarea id="afternoonSnackDiary" name="afternoonSnackDiary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dinnerDiary">Akşam:</label>
+                <textarea id="dinnerDiary" name="dinnerDiary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="nightSnackDiary">Gece:</label>
+                <textarea id="nightSnackDiary" name="nightSnackDiary" rows="3"></textarea>
+            </div>
+
+            <h2>7. YEME DAVRANIŞLARI VE DUYGUSAL YEME</h2>
+            <div class="form-group">
+                <label>Yemek yeme hızınız:</label>
+                <input type="radio" id="eatingSpeedSlow" name="eatingSpeed" value="Yavaş">
+                <label for="eatingSpeedSlow">Yavaş</label>
+                <input type="radio" id="eatingSpeedNormal" name="eatingSpeed" value="Normal">
+                <label for="eatingSpeedNormal">Normal</label>
+                <input type="radio" id="eatingSpeedFast" name="eatingSpeed" value="Hızlı">
+                <label for="eatingSpeedFast">Hızlı</label>
+            </div>
+            <div class="form-group">
+                <label>Porsiyonlarınızı nasıl değerlendirirsiniz?</label>
+                <input type="radio" id="portionSizeSmall" name="portionSize" value="Küçük">
+                <label for="portionSizeSmall">Küçük</label>
+                <input type="radio" id="portionSizeNormal" name="portionSize" value="Normal">
+                <label for="portionSizeNormal">Normal</label>
+                <input type="radio" id="portionSizeBig" name="portionSize" value="Büyük">
+                <label for="portionSizeBig">Büyük</label>
+            </div>
+            <div class="form-group">
+                <label>Dışarıda yemek yeme sıklığı:</label>
+                <select id="eatingOutFrequency" name="eatingOutFrequency">
+                    <option value="Nadiren">Nadiren</option>
+                    <option value="Haftada 1-2">Haftada 1-2</option>
+                    <option value="Haftada 3-4">Haftada 3-4</option>
+                    <option value="Hergün">Hergün</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fast food tüketim sıklığı:</label>
+                <select id="fastFoodFrequency" name="fastFoodFrequency">
+                    <option value="Nadiren">Nadiren</option>
+                    <option value="Haftada 1-2">Haftada 1-2</option>
+                    <option value="Haftada 3-4">Haftada 3-4</option>
+                    <option value="Hergün">Hergün</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="emotionalEating">Hangi duygu durumunda hangi yemekleri tercih edersiniz?</label>
+                <textarea id="emotionalEating" name="emotionalEating" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Stres seviyeniz:</label>
+                <input type="radio" id="stressLevelLow" name="stressLevel" value="Düşük">
+                <label for="stressLevelLow">Düşük</label>
+                <input type="radio" id="stressLevelMedium" name="stressLevel" value="Orta">
+                <label for="stressLevelMedium">Orta</label>
+                <input type="radio" id="stressLevelHigh" name="stressLevel" value="Yüksek">
+                <label for="stressLevelHigh">Yüksek</label>
+            </div>
+            <div class="form-group">
+                <label for="stressManagement">Stres yönetim teknikleri:</label>
+                <input type="text" id="stressManagement" name="stressManagement">
+            </div>
+
+            <h2>8. FİZİKSEL AKTİVİTE DURUMU</h2>
+            <div class="form-group">
+                <label for="dailySteps">Günlük ortalama adım sayısı:</label>
+                <input type="number" id="dailySteps" name="dailySteps">
+            </div>
+            <div class="form-group">
+                <label>Haftalık egzersiz sıklığı:</label>
+                <input type="radio" id="exerciseFrequencyNone" name="exerciseFrequency" value="Hiç">
+                <label for="exerciseFrequencyNone">Hiç</label>
+                <input type="radio" id="exerciseFrequency1-2" name="exerciseFrequency" value="1-2 kez">
+                <label for="exerciseFrequency1-2">1-2 kez</label>
+                <input type="radio" id="exerciseFrequency3-4" name="exerciseFrequency" value="3-4 kez">
+                <label for="exerciseFrequency3-4">3-4 kez</label>
+                <input type="radio" id="exerciseFrequency5+" name="exerciseFrequency" value="5 kez veya daha fazla">
+                <label for="exerciseFrequency5+">5 kez veya daha fazla</label>
+            </div>
+            <div class="form-group">
+                <label>Egzersiz türü ve süresi:</label>
+                <input type="text" id="cardioExercise" name="cardioExercise" placeholder="Kardiyovasküler (koşu, yüzme vb.):">
+                <input type="number" id="cardioMinutes" name="cardioMinutes" placeholder="dakika/hafta">
+            </div>
+            <div class="form-group">
+                <input type="text" id="strengthExercise" name="strengthExercise" placeholder="Kuvvet antrenmanı:">
+                <input type="number" id="strengthMinutes" name="strengthMinutes" placeholder="dakika/hafta">
+            </div>
+            <div class="form-group">
+                <input type="text" id="flexibilityExercise" name="flexibilityExercise" placeholder="Esneklik (yoga, pilates vb.):">
+                <input type="number" id="flexibilityMinutes" name="flexibilityMinutes" placeholder="dakika/hafta">
+            </div>
+            <div class="form-group">
+                <input type="text" id="otherExercise" name="otherExercise" placeholder="Diğer:">
+                <input type="number" id="otherMinutes" name="otherMinutes" placeholder="dakika/hafta">
+            </div>
+            <div class="form-group">
+                <label>İş/okul aktivite düzeyi:</label>
+                <input type="radio" id="activityLevelSedentary" name="activityLevel" value="Sedanter">
+                <label for="activityLevelSedentary">Sedanter (çoğunlukla oturarak)</label>
+                <input type="radio" id="activityLevelLightlyActive" name="activityLevel" value="Hafif aktif">
+                <label for="activityLevelLightlyActive">Hafif aktif (ara sıra ayakta veya yürüyerek)</label>
+                <input type="radio" id="activityLevelModeratelyActive" name="activityLevel" value="Orta aktif">
+                <label for="activityLevelModeratelyActive">Orta aktif (genellikle ayakta veya yürüyerek)</label>
+                <input type="radio" id="activityLevelVeryActive" name="activityLevel" value="Çok aktif">
+                <label for="activityLevelVeryActive">Çok aktif (sürekli hareket halinde veya ağır iş)</label>
+            </div>
+
+            <h2>9. UYKU DÜZENİ</h2>
+            <div class="form-group">
+                <label for="sleepDuration">Ortalama uyku saatiniz:</label>
+                <input type="text" id="sleepDuration" name="sleepDuration">
+            </div>
+            <div class="form-group">
+                <label>Uyku kalitenizi nasıl değerlendirirsiniz?</label>
+                <input type="radio" id="sleepQualityVeryGood" name="sleepQuality" value="Çok iyi">
+                <label for="sleepQualityVeryGood">Çok iyi</label>
+                <input type="radio" id="sleepQualityGood" name="sleepQuality" value="İyi">
+                <label for="sleepQualityGood">İyi</label>
+                <input type="radio" id="sleepQualityAverage" name="sleepQuality" value="Orta">
+                <label for="sleepQualityAverage">Orta</label>
+                <input type="radio" id="sleepQualityBad" name="sleepQuality" value="Kötü">
+                <label for="sleepQualityBad">Kötü</label>
+                <input type="radio" id="sleepQualityVeryBad" name="sleepQuality" value="Çok kötü">
+                <label for="sleepQualityVeryBad">Çok kötü</label>
+            </div>
+            <div class="form-group">
+                <label>Uyku problemleriniz var mı?</label>
+                <input type="radio" id="sleepProblemsYes" name="sleepProblems" value="Evet">
+                <label for="sleepProblemsYes">Evet</label>
+                <input type="radio" id="sleepProblemsNo" name="sleepProblems" value="Hayır">
+                <label for="sleepProblemsNo">Hayır</label>
+                <input type="text" id="sleepProblemsExplanation" name="sleepProblemsExplanation" placeholder="Varsa açıklayınız:">
+            </div>
+
+            <h2>10. İŞ VE YAŞAM KOŞULLARI</h2>
+            <div class="form-group">
+                <label for="workHours">Günlük çalışma saatleriniz:</label>
+                <input type="text" id="workHours" name="workHours">
+            </div>
+            <div class="form-group">
+                <label>İş stres düzeyiniz:</label>
+                <input type="radio" id="workStressLow" name="workStress" value="Düşük">
+                <label for="workStressLow">Düşük</label>
+                <input type="radio" id="workStressMedium" name="workStress" value="Orta">
+                <label for="workStressMedium">Orta</label>
+                <input type="radio" id="workStressHigh" name="workStress" value="Yüksek">
+                <label for="workStressHigh">Yüksek</label>
+            </div>
+            <div class="form-group">
+                <label>İş yerinde yemek imkanları:</label>
+                <input type="checkbox" id="workMealOptionsCafeteria" name="workMealOptions" value="Yemekhane">
+                <label for="workMealOptionsCafeteria">Yemekhane</label>
+                <input type="checkbox" id="workMealOptionsOrderOut" name="workMealOptions" value="Dışarıdan sipariş">
+                <label for="workMealOptionsOrderOut">Dışarıdan sipariş</label>
+                <input type="checkbox" id="workMealOptionsBringFromHome" name="workMealOptions" value="Evden getirme">
+                <label for="workMealOptionsBringFromHome">Evden getirme</label>
+                <input type="checkbox" id="workMealOptionsOther" name="workMealOptions" value="Diğer">
+                <label for="workMealOptionsOther">Diğer</label>
+                <input type="text" id="workMealOptionsOtherText" name="workMealOptionsOtherText" placeholder="Belirtiniz:">
+            </div>
+            <div class="form-group">
+                <label>Vardiyalı çalışma durumu:</label>
+                <input type="radio" id="shiftWorkYes" name="shiftWork" value="Evet">
+                <label for="shiftWorkYes">Evet</label>
+                <input type="radio" id="shiftWorkNo" name="shiftWork" value="Hayır">
+                <label for="shiftWorkNo">Hayır</label>
+                <input type="text" id="shiftWorkExplanation" name="shiftWorkExplanation" placeholder="Evet ise, vardiya düzeninizi açıklayınız:">
+            </div>
+
+            <h2>11. TEKNOLOJİ KULLANIMI</h2>
+            <div class="form-group">
+                <label>Akıllı telefon kullanıyor musunuz?</label>
+                <input type="radio" id="smartphoneYes" name="smartphone" value="Evet">
+                <label for="smartphoneYes">Evet</label>
+                <input type="radio" id="smartphoneNo" name="smartphone" value="Hayır">
+                <label for="smartphoneNo">Hayır</label>
+            </div>
+            <div class="form-group">
+                <label>Beslenme veya fitness uygulamaları kullanıyor musunuz?</label>
+                <input type="radio" id="fitnessAppsYes" name="fitnessApps" value="Evet">
+                <label for="fitnessAppsYes">Evet</label>
+                <input type="radio" id="fitnessAppsNo" name="fitnessApps" value="Hayır">
+                <label for="fitnessAppsNo">Hayır</label>
+                <input type="text" id="fitnessAppsUsed" name="fitnessAppsUsed" placeholder="Evet ise, hangileri:">
+            </div>
+            <div class="form-group">
+                <label>Adım sayar veya fitness takip cihazı kullanıyor musunuz?</label>
+                <input type="radio" id="fitnessTráckerYes" name="fitnessTracker" value="Evet">
+                <label for="fitnessTráckerYes">Evet</label>
+                <input type="radio" id="fitnessTráckerNo" name="fitness
+                <input type="radio" id="fitnessTrackerNo" name="fitnessTracker" value="Hayır">
+                <label for="fitnessTrackerNo">Hayır</label>
+            </div>
+            <div class="form-group">
+                <label>Online diyet danışmanlığına açık mısınız?</label>
+                <input type="radio" id="onlineDietYes" name="onlineDiet" value="Evet">
+                <label for="onlineDietYes">Evet</label>
+                <input type="radio" id="onlineDietNo" name="onlineDiet" value="Hayır">
+                <label for="onlineDietNo">Hayır</label>
+                <input type="radio" id="onlineDietMaybe" name="onlineDiet" value="Belki">
+                <label for="onlineDietMaybe">Belki</label>
+            </div>
+
+            <h2>12. BESLENME HEDEFLERİ</h2>
+            <div class="form-group">
+                <label for="shortTermGoals">Kısa vadeli beslenme hedefleriniz (1-3 ay):</label>
+                <textarea id="shortTermGoals" name="shortTermGoals" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="longTermGoals">Uzun vadeli beslenme hedefleriniz (6 ay ve üzeri):</label>
+                <textarea id="longTermGoals" name="longTermGoals" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Beslenme alışkanlıklarınızda değiştirmek istediğiniz en önemli 3 şey:</label>
+                <input type="text" id="changeHabit1" name="changeHabit1" placeholder="1.">
+                <input type="text" id="changeHabit2" name="changeHabit2" placeholder="2.">
+                <input type="text" id="changeHabit3" name="changeHabit3" placeholder="3.">
+            </div>
+
+            <h2>13. EK NOTLAR</h2>
+            <div class="form-group">
+                <label for="additionalNotes">Eklemek istediğiniz herhangi bir not:</label>
+                <textarea id="additionalNotes" name="additionalNotes" rows="5"></textarea>
+            </div>
+
+            <button type="submit">Formu Gönder</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('dietForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form başarıyla gönderildi! Teşekkür ederiz.');
+            // Burada form verilerini işlemek için ek JavaScript kodu eklenebilir
+        });
+    </script>
+</body>
+</html>
